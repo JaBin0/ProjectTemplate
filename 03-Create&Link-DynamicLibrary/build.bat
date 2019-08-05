@@ -2,8 +2,8 @@ echo off
 cls
 color 7
 
-SET STATICLIB_DIR="StaticLibrary"
-SET STATICLIB_BUILD=build-StaticLib.bat
+SET STATICLIB_DIR="DynamicLibrary"
+SET STATICLIB_BUILD=build-DynamicLib.bat
 SET PROJECT_DIR="Project"
 SET PROJECT_BUILD=build-Project.bat
 
