@@ -5,7 +5,7 @@ echo ==== BUILD Begin ====
 
 :config
 REM ==== CONFIGURATION ====
-SET EXE_NAME=Makak.exe
+SET EXE_NAME=HelloWorld.exe
 SET PATH=C:\My_MinGW\bin;%PATH%
 REM SET PATH=c:\MinGW\bin;%PATH%
 
@@ -17,7 +17,7 @@ SET OBJ= ^
 src\main.cpp 
 
 SET CFLAGS= ^
--std=c++11 ^
+-std=c++14 ^
 -w 
 
 SET LFLAGS= 
