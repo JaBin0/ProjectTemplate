@@ -1,4 +1,8 @@
 echo off
+if NOT %ERROR_CODE% == 0 (
+    echo ==== BUILD FAILD ==== 
+    goto :end
+) 
 
 REM ==== CONFIGURATION ====
 SET EXE_NAME=Project.exe

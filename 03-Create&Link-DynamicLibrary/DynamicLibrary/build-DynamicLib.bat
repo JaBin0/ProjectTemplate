@@ -29,7 +29,9 @@ g++ %CFLAGS% %SOURCE% -o build\%LIB_NAME% %LFLAGS%
 echo off
 if NOT %errorlevel%==0 (
     color 4 
+    SET ERROR_CODE=%errorlevel%
     echo ==== CREATING STATIC LIB - FAILD ==== 
+
     goto :end
 )
 
