@@ -41,4 +41,4 @@ echo.
 echo ==== END ====
 
 :end
-echo on
+echo off
