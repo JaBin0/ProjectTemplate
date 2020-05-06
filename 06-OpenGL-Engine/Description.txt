@@ -1,0 +1,6 @@
+Idea behind this template is to create initial setup which can be used to test or learn any stuff related to the OpenGL
+
+this template should cover 
+integration of glfw
+integration of glad
+integration of some entity OPP storege system 
