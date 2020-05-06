@@ -13,6 +13,7 @@ mkdir build
 
 REM Copy all assets
 xcopy /I /Y libs\glfw3.dll build\
+xcopy /E /I /Y assets build\assets
 
 :build
 REM ==== BUILD ====
@@ -20,7 +21,8 @@ SET OBJ=^
 src\Game.cpp ^
 src\OPPEngine\OOPEngine.cpp ^
 external\glad\glad.c ^
-src\Graphics\OGl.cpp
+src\Graphics\OGl.cpp ^
+src\Assets\AssetLoader.cpp
 
 SET CFLAGS=^
 -std=c++14 ^
@@ -29,6 +31,7 @@ SET CFLAGS=^
 -Isrc\OPPEngine ^
 -Iexternal ^
 -Isrc\Graphics ^
+-Isrc\Assets ^
 -Llibs
 
 SET LFLAGS=^

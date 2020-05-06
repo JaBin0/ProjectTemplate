@@ -6,6 +6,7 @@
 #include <OGl.h>
 #include <OOPEngine.h>
 #include <Settings.h>
+#include <AssetLoader.h>
 
 OOPEngine::OOPEngine() 
     : m_renderer{new OGl()}
@@ -53,4 +54,16 @@ void OOPEngine::run() {
         m_renderer->draw();
         glfwSwapBuffers(m_window);
     }
+}
+
+bool OOPEngine::createShader(const std::string vertexShaderName, const std::string fragmentShaderName, uint16_t shaderId) {
+    std::string vertexShaderSoruce = AssetLoader::loadFile(AssetLoader::SHADER_PATH + vertexShaderName + ".vert");
+    std::string fragmentShaderSoruce = AssetLoader::loadFile(AssetLoader::SHADER_PATH + vertexShaderName + ".frag");
+    std::cout << vertexShaderSoruce.data();
+    std::cout << "/========================" << std::endl;
+    std::cout << fragmentShaderSoruce.data();
+    return false;
+
+    //bool success = ::loadShaderSources(vertexShaderName, fragmentShaderName, )
+
 }
