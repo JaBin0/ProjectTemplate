@@ -7,6 +7,10 @@ void Game::loadScene() {
     std::cout << "Load scene" << std::endl;
 }
 
+void Game::init() {
+    OOPEngine::init();
+}
+
 int main(int argc, char** argv ) {
     std::cout << "Project Template: 06-OpenGL-Engine"<< std::endl;
     Game game;

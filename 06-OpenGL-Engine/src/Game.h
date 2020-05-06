@@ -5,4 +5,7 @@
 class Game : public OOPEngine {
 public:
     void loadScene() override;
+
+protected:
+    void init() override;
 };

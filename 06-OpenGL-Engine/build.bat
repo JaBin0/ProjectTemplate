@@ -11,19 +11,29 @@ REM SET PATH=c:\MinGW\bin;%PATH%
 
 mkdir build
 
+REM Copy all assets
+xcopy /I /Y libs\glfw3.dll build\
+
 :build
 REM ==== BUILD ====
 SET OBJ=^
 src\Game.cpp ^
-src\OPPEngine\OOPEngine.cpp
+src\OPPEngine\OOPEngine.cpp ^
+external\glad\glad.c ^
+src\Graphics\OGl.cpp
 
 SET CFLAGS=^
 -std=c++14 ^
 -w ^
 -Isrc ^
--Isrc\OPPEngine
+-Isrc\OPPEngine ^
+-Iexternal ^
+-Isrc\Graphics ^
+-Llibs
 
-SET LFLAGS= 
+SET LFLAGS=^
+-lopengl32 ^
+-lglfw3dll
 
 echo on
 g++ %OBJ% %CFLAGS% -o build\%EXE_NAME% %LFLAGS%

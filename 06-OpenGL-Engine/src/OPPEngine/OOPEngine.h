@@ -1,5 +1,10 @@
 #pragma once
 
+// Forward declaration
+class OGl;
+class GLFWwindow;
+
+
 /* Brief:
  *   TODO!
 */
@@ -20,4 +25,16 @@ public:
      *   TODO!
     */
     virtual void run();
+
+    /* Brief:
+     *   Setup engine asstets etc.
+    */
+    virtual void init();
+
+private:
+    // Window handler
+    GLFWwindow* m_window;
+
+    // Graphic context handler
+    OGl* const m_renderer;
 };
