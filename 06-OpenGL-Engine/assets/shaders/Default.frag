@@ -4,13 +4,14 @@ in vec2 fTex;
 in vec3 fNorm;
 
 out vec4 FragColor;
-uniform float time;
-uniform vec3 color;
+//uniform float time;
+//uniform vec3 color;
 
 void main() {
     vec4 light_color = vec4(1.0, 1.0, 1.0, 1.0);
-    //vec4 color = vec4(0.5, 0.5, 0.25, 1.0);
-    vec3 light_position = vec3 (2.0 * sin(time), 2.0, 2.0 * cos(time));
+    vec4 color = vec4(0.5, 0.5, 0.25, 1.0);
+    //vec3 light_position = vec3 (2.0 * sin(time), 2.0, 2.0 * cos(time));
+    vec3 light_position = vec3(2.0, 3.0, 2.0);
     float ambient_strength = 0.1;
 
     vec3 nromals = normalize(fNorm);

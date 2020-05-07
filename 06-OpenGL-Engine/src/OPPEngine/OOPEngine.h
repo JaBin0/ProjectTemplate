@@ -39,8 +39,15 @@ protected:
      * param shaderId - ID which should be associated with newly created graphic pipline
      * return - true if graphic pipline was created successfully 
     */
-    bool createShader(const std::string vertexShaderName, const std::string fragmentShaderName, uint16_t shaderId);
+    bool createShader(const std::string vertexShaderName, const std::string fragmentShaderName, const uint16_t shaderId);
 
+    /* Brief:
+     *   Load mesh from specyfic file and bind loaded information with given Id.
+     * param meshfileName - Name of file which should contain mesh inormation
+     * param meshId - ID which should be associated with newly created object
+     * return - true if graphic pipline was created successfully 
+    */
+    bool loadMesh(const std::string meshfileName, const uint16_t meshId);
 
 private:
     // Window handler

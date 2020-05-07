@@ -1,11 +1,13 @@
 // System headers
 #include <iostream>
+#include <vector>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 // Engine headers
 #include <OGl.h>
 #include <OOPEngine.h>
 #include <Settings.h>
+#include <AssetsID.h>
 #include <AssetLoader.h>
 
 OOPEngine::OOPEngine() 
@@ -39,7 +41,7 @@ OOPEngine::~OOPEngine() {
 }
 
 void OOPEngine::init() {
-
+    
 }
 
 void OOPEngine::run() {
@@ -56,14 +58,15 @@ void OOPEngine::run() {
     }
 }
 
-bool OOPEngine::createShader(const std::string vertexShaderName, const std::string fragmentShaderName, uint16_t shaderId) {
+bool OOPEngine::createShader(const std::string vertexShaderName, const std::string fragmentShaderName, const uint16_t shaderId) {
     std::string vertexShaderSoruce = AssetLoader::loadFile(AssetLoader::SHADER_PATH + vertexShaderName + ".vert");
     std::string fragmentShaderSoruce = AssetLoader::loadFile(AssetLoader::SHADER_PATH + vertexShaderName + ".frag");
-    std::cout << vertexShaderSoruce.data();
-    std::cout << "/========================" << std::endl;
-    std::cout << fragmentShaderSoruce.data();
-    return false;
+    return m_renderer->createShader(shaderId, vertexShaderSoruce.data(), fragmentShaderSoruce.data());
+}
 
-    //bool success = ::loadShaderSources(vertexShaderName, fragmentShaderName, )
-
+bool OOPEngine::loadMesh(const std::string meshfileName, const uint16_t meshId) {
+    std::vector<float> meshData {};
+    AssetLoader::loadMeshData(AssetLoader::MESH_PATH + meshfileName, meshData);
+    m_renderer->createVAO(meshId, MeshDiscription{-1, meshData, {3u,2u,3u}});
+    return true;
 }
