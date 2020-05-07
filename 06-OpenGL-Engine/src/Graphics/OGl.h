@@ -40,6 +40,10 @@ public:
     // Create vertex array object 
     void createVAO(const uint16_t meshID, MeshDiscription description);
 
+    void setProgram(uint16_t programID);
+
+    void setUniform();
+
 public:
     // Tmp section
     // Perspective matrix
@@ -48,6 +52,8 @@ public:
 
     // Look at matrix of camera
     glm::mat4 m_lookAt;
+
+    uint16_t m_program;
 
 private:
     /* Brief:

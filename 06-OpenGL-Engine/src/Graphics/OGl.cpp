@@ -99,6 +99,7 @@ bool OGl::createShader(const uint16_t programID, const char* vertexShaderSrc, co
     }
     else {
         m_programMapper.insert({programID, graphicPipline});
+        m_program = programID;
     }
     return isCreated;
 }
@@ -141,4 +142,8 @@ void OGl::createVAO(const uint16_t meshID, MeshDiscription description) {
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     m_meshMapper.insert({meshID, {vao, vbo, bufferSize/stride}});
+}
+
+void setProgram(uint16_t programID) {
+    
 }
