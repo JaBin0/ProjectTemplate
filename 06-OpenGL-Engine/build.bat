@@ -36,6 +36,8 @@ SET CFLAGS=^
 -Isrc\Entities ^
 -Llibs
 
+Tomek
+
 SET LFLAGS=^
 -lopengl32 ^
 -lglfw3dll
