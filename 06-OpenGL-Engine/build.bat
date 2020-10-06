@@ -22,7 +22,8 @@ src\Game.cpp ^
 src\OPPEngine\OOPEngine.cpp ^
 external\glad\glad.c ^
 src\Graphics\OGl.cpp ^
-src\Assets\AssetLoader.cpp
+src\Assets\AssetLoader.cpp ^
+src\Entities\Entity.cpp
 
 SET CFLAGS=^
 -std=c++14 ^
@@ -32,6 +33,7 @@ SET CFLAGS=^
 -Iexternal ^
 -Isrc\Graphics ^
 -Isrc\Assets ^
+-Isrc\Entities ^
 -Llibs
 
 SET LFLAGS=^
