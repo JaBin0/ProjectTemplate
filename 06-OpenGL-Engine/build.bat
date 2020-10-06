@@ -35,7 +35,7 @@ SET CFLAGS=^
 -Isrc\Assets ^
 -Isrc\Entities ^
 -Llibs
-
+                                   
 SET LFLAGS=^
 -lopengl32 ^
 -lglfw3dll
